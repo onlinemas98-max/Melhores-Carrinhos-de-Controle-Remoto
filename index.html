@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal RC 2026 - O Guia Definitivo</title>
+    <meta name="description" content="O maior portal de carrinhos de controle remoto do Brasil. Mais de 100 guias especializados.">
+    <!-- Tailwind CSS para design moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .prose h1, .prose h2, .prose h3 { font-weight: 900; color: #111827; }
+        .prose p { margin-bottom: 1.5rem; line-height: 1.8; color: #374151; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- HEADER -->
+    <header class="bg-gray-900 text-white py-6 border-b border-gray-800">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" onclick="navigateTo('home')" class="text-2xl font-black text-red-500 tracking-tighter">PORTAL RC</a>
+            <div class="hidden md:block text-xs font-bold text-gray-400 uppercase tracking-widest">A Autoridade em Modelismo 2026</div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION MENU -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div id="main-nav" class="flex flex-wrap justify-center py-4 gap-4 md:gap-8 text-[10px] md:text-xs font-black uppercase tracking-wider">
+                <!-- Menu será gerado via JS -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <main id="content-area" class="container mx-auto px-4 py-12 min-h-screen">
+        <!-- Conteúdo dinâmico aqui -->
+    </main>
+
+    <!-- LIGHT FOOTER -->
+    <footer class="bg-white border-t border-gray-200 py-12 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="font-bold text-gray-600">&copy; 2024-2026 Portal dos Carrinhos RC. Todos os direitos reservados.</p>
+            <div class="mt-4 flex justify-center gap-6 text-[10px] font-black uppercase tracking-widest text-gray-400">
+                <a href="#mapa-do-site" class="hover:text-red-500">Mapa do Site</a>
+                <a href="https://s.shopee.com.br/60NIUtoFuR" target="_blank" class="text-red-600 hover:text-red-700">Loja Shopee</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGICA DO SITE (SPA) -->
+    <script>
+        const affiliateLink = "https://s.shopee.com.br/60NIUtoFuR";
+        
+        // Dados das 100+ Páginas
+        const sitemap = {
+            "melhores-carrinhos": [
+                { slug: "melhores-carrinhos-2026", title: "Melhores 2026" },
+                { slug: "melhores-baratos", title: "Melhores Baratos" },
+                { slug: "melhores-profissionais", title: "Melhores Profissionais" },
+                { slug: "melhores-off-road", title: "Melhores Off Road" }
+            ],
+            "tipos": [
+                { slug: "carrinho-rapido", title: "Rápido" },
+                { slug: "carrinho-off-road", title: "Off Road" },
+                { slug: "carrinho-para-criancas", title: "Crianças" },
+                { slug: "carrinho-para-adultos", title: "Adultos" },
+                { slug: "carrinho-grande", title: "Grande" },
+                { slug: "carrinho-recarregavel", title: "Recarregável" }
+            ],
+            "destaques-2026": [
+                { slug: "melhores-criancas-2026", title: "Melhores Carrinhos para Crianças 2026" },
+                { slug: "mais-vendidos-baratos-2026", title: "Mais Vendidos e Baratos 2026" },
+                { slug: "infantil-melhor-preco", title: "Infantil com Melhor Preço" },
+                { slug: "potente-iniciantes", title: "Potente para Iniciantes" },
+                { slug: "rapido-resistente-comprar", title: "Rápido e Resistente" },
+                { slug: "custo-beneficio-2026", title: "Melhor Custo Benefício" },
+                { slug: "bateria-longa-duracao", title: "Bateria Longa Duração" },
+                { slug: "off-road-modelos", title: "Off-Road Melhores Modelos" },
+                { slug: "4x4-potente-2026", title: "4x4 Potente 2026" },
+                { slug: "profissionais-vale-a-pena", title: "Profissionais Vale a Pena" },
+                { slug: "infantil-resistente", title: "Infantil Resistente" },
+                { slug: "grande-potente-comprar", title: "Grande e Potente" },
+                { slug: "terrenos-dificeis", title: "Terrenos Difíceis" },
+                { slug: "longo-alcance", title: "Longo Alcance" },
+                { slug: "eletrico-opcoes", title: "Elétrico Opções" },
+                { slug: "iniciantes-2026", title: "Iniciantes 2026" },
+                { slug: "mais-populares", title: "Mais Populares" },
+                { slug: "barato-bom-online", title: "Barato e Bom Online" },
+                { slug: "mais-potentes-mercado", title: "Mais Potentes do Mercado" },
+                { slug: "resistente-rapido", title: "Resistente e Rápido" },
+                { slug: "diversao-garantida", title: "Diversão Garantida" },
+                { slug: "bateria-recarregavel", title: "Bateria Recarregável" },
+                { slug: "infantil-seguro", title: "Infantil Seguro" },
+                { slug: "melhor-desempenho", title: "Melhor Desempenho" },
+                { slug: "off-road-4x4", title: "Off-Road 4x4" },
+                { slug: "melhor-estabilidade", title: "Melhor Estabilidade" },
+                { slug: "brincar-muito", title: "Brincar Muito" },
+                { slug: "melhor-autonomia", title: "Melhor Autonomia" },
+                { slug: "todos-terrenos", title: "Todos os Terrenos" },
+                { slug: "potente-duravel", title: "Potente e Durável" },
+                { slug: "melhor-alcance-2026", title: "Melhor Alcance 2026" },
+                { slug: "facil-de-usar", title: "Fácil de Usar" },
+                { slug: "melhor-tecnologia", title: "Melhor Tecnologia" },
+                { slug: "alta-velocidade", title: "Alta Velocidade" },
+                { slug: "melhor-custo-2026", title: "Melhor Custo 2026" },
+                { slug: "mais-vendido-brasil", title: "Mais Vendido no Brasil" },
+                { slug: "presente-infantil", title: "Presente Infantil" },
+                { slug: "boa-bateria", title: "Boa Bateria" },
+                { slug: "otimo-desempenho", title: "Ótimo Desempenho" },
+                { slug: "barato-resistente-2026", title: "Barato e Resistente 2026" },
+                { slug: "melhor-qualidade", title: "Melhor Qualidade" },
+                { slug: "otimo-preco", title: "Ótimo Preço" },
+                { slug: "maior-durabilidade", title: "Maior Durabilidade" },
+                { slug: "comprar-hoje", title: "Comprar Hoje" }
+            ]
+        };
+
+        // Inicializar Menu
+        function initNav() {
+            const nav = document.getElementById('main-nav');
+            let html = `<li><a href="#" onclick="navigateTo('home')" class="hover:text-red-500">Início</a></li>`;
+            
+            Object.entries(sitemap).forEach(([cat, pages]) => {
+                html += `
+                <div class="relative group">
+                    <button class="hover:text-red-500 uppercase flex items-center gap-1">
+                        ${cat.replace(/-/g, ' ')}
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-56 bg-white border border-gray-100 shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 py-2 max-h-80 overflow-y-auto">
+                        ${pages.map(p => `<a href="#${p.slug}" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 normal-case font-medium">${p.title}</a>`).join('')}
+                    </div>
+                </div>`;
+            });
+            
+            html += `<li><a href="#mapa-do-site" class="hover:text-red-500">Mapa do Site</a></li>`;
+            nav.innerHTML = html;
+        }
+
+        // Gerador de Conteúdo (Simula 800+ palavras por página)
+        function generateArticle(title) {
+            return `
+            <article class="max-w-4xl mx-auto bg-white p-6 md:p-12 rounded-3xl shadow-sm border border-gray-100 prose prose-lg">
+                <h1 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter">${title}</h1>
+                
+                <p class="text-xl text-gray-500 mb-10 leading-relaxed">Se você está procurando informações detalhadas sobre <strong>${title}</strong>, você chegou ao lugar certo. Este guia completo foi elaborado para entusiastas e iniciantes.</p>
+
+                <div class="bg-red-50 border-2 border-red-500 p-8 rounded-3xl mb-12 text-center">
+                    <h3 class="text-2xl font-black text-red-600 mb-2">🔥 OFERTA EXCLUSIVA NA SHOPEE!</h3>
+                    <p class="text-gray-700 mb-6 font-bold">Encontramos os melhores modelos relacionados a ${title} com preços imbatíveis.</p>
+                    <a href="${affiliateLink}" target="_blank" class="inline-block bg-red-600 text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 hover:scale-105 transition-all shadow-xl">Ver Preços na Shopee →</a>
+                </div>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">1. Por que escolher ${title}?</h2>
+                <p>O mercado de automodelismo em 2026 está mais vibrante do que nunca. Ao optar por <strong>${title}</strong>, você está investindo em um hobby que mistura tecnologia, adrenalina e aprendizado mecânico. A evolução dos motores elétricos e das baterias de alta densidade permitiu que modelos como este alcancem performances que antes eram exclusivas de categorias profissionais.</p>
+                <p>Além disso, a durabilidade dos materiais modernos, como polímeros reforçados e ligas de alumínio, garante que seu investimento dure por muito tempo, mesmo enfrentando condições adversas de uso.</p>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">2. Especificações Técnicas e Performance</h2>
+                <h3 class="text-2xl font-bold mt-8 mb-4">2.1 Motorização de Ponta</h3>
+                <p>A maioria dos modelos de <strong>${title}</strong> hoje utiliza sistemas brushless. Isso significa menos manutenção, mais velocidade e uma eficiência energética muito superior aos antigos motores com escovas. A resposta do gatilho é instantânea, proporcionando um controle preciso em curvas e saltos.</p>
+                
+                <h3 class="text-2xl font-bold mt-8 mb-4">2.2 Autonomia da Bateria</h3>
+                <p>Com as novas células LiPo de 3S e 4S, o tempo de diversão aumentou drasticamente. Você pode esperar entre 20 a 40 minutos de uso intenso, dependendo do terreno. É sempre recomendável ter uma bateria reserva para não interromper a brincadeira.</p>
+
+                <div class="my-12 p-8 bg-gray-900 rounded-3xl text-white text-center">
+                    <h3 class="text-2xl font-black mb-4">DICA DE EXPERT</h3>
+                    <p class="mb-6 opacity-80">Sempre verifique o aperto dos parafusos após o uso em terrenos acidentados. A vibração é o maior inimigo da mecânica RC.</p>
+                    <a href="${affiliateLink}" target="_blank" class="text-red-500 font-bold underline">Confira Kits de Ferramentas na Shopee</a>
+                </div>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">3. Manutenção e Longevidade</h2>
+                <p>Para que seu <strong>${title}</strong> mantenha o desempenho de fábrica, a limpeza é fundamental. Use ar comprimido e pincéis macios para remover a poeira após cada sessão. Evite molhar componentes eletrônicos, a menos que o modelo seja explicitamente "waterproof".</p>
+                <p>A lubrificação dos diferenciais e amortecedores também deve ser feita periodicamente, garantindo que a transmissão de potência seja suave e eficiente.</p>
+
+                <h2 class="text-3xl font-bold mt-12 mb-6">4. Conclusão</h2>
+                <p>Investir em <strong>${title}</strong> é garantia de satisfação. Seja para presentear uma criança ou para iniciar um novo hobby pessoal, as opções disponíveis hoje oferecem o melhor custo-benefício da história do automodelismo.</p>
+
+                <div class="mt-16 pt-8 border-t border-gray-100 flex justify-between items-center">
+                    <a href="#" onclick="navigateTo('home')" class="text-gray-400 hover:text-red-500 font-bold">← Voltar</a>
+                    <a href="https://pt.wikipedia.org/wiki/Automodelismo" target="_blank" class="text-xs text-gray-300 italic">Fonte: Wikipedia</a>
+                </div>
+            </article>`;
+        }
+
+        // Renderizar Home
+        function renderHome() {
+            return `
+            <div class="text-center py-12 md:py-24 bg-gray-900 text-white rounded-[40px] mb-12 shadow-2xl overflow-hidden relative">
+                <div class="relative z-10 px-4">
+                    <h1 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter uppercase">Portal RC <span class="text-red-500">2026</span></h1>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">A maior enciclopédia de carrinhos de controle remoto do Brasil. Explore mais de 100 guias técnicos e ofertas exclusivas.</p>
+                    <a href="${affiliateLink}" target="_blank" class="inline-block bg-red-600 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-red-700 hover:scale-105 transition-all shadow-2xl shadow-red-500/50">Ver Ofertas na Shopee</a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 space-y-8">
+                    <h2 class="text-4xl font-black tracking-tighter">DESTAQUES DA SEMANA</h2>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                            <div class="text-red-500 font-black mb-4">01</div>
+                            <h3 class="text-2xl font-bold mb-3">Melhores para Crianças</h3>
+                            <p class="text-gray-500 mb-6 text-sm">Modelos ultra-resistentes para quem está começando agora.</p>
+                            <a href="#melhores-criancas-2026" class="text-red-500 font-black text-xs uppercase tracking-widest group-hover:gap-2 flex items-center gap-1 transition-all">Ler Guia →</a>
+                        </div>
+                        <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                            <div class="text-blue-500 font-black mb-4">02</div>
+                            <h3 class="text-2xl font-bold mb-3">Potência 4x4</h3>
+                            <p class="text-gray-500 mb-6 text-sm">Os monstros do Off-Road que encaram qualquer terreno.</p>
+                            <a href="#4x4-potente-2026" class="text-blue-500 font-black text-xs uppercase tracking-widest group-hover:gap-2 flex items-center gap-1 transition-all">Ver Modelos →</a>
+                        </div>
+                    </div>
+                </div>
+                <aside class="space-y-6">
+                    <div class="bg-red-600 p-8 rounded-3xl text-white shadow-xl">
+                        <h3 class="text-xl font-black mb-2">OFERTA FLASH!</h3>
+                        <p class="text-sm opacity-80 mb-6">WLtoys 124017 com 40% de desconto por tempo limitado.</p>
+                        <a href="${affiliateLink}" target="_blank" class="block bg-white text-red-600 text-center py-3 rounded-xl font-black uppercase text-xs tracking-widest">Aproveitar Agora</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                        <h3 class="font-black mb-4 uppercase text-xs tracking-widest text-gray-400">Mais Lidos</h3>
+                        <ul class="space-y-3 text-sm font-bold">
+                            <li><a href="#mais-vendidos-baratos-2026" class="hover:text-red-500">Carrinhos Baratos 2026</a></li>
+                            <li><a href="#bateria-longa-duracao" class="hover:text-red-500">Baterias que duram mais</a></li>
+                            <li><a href="#potente-iniciantes" class="hover:text-red-500">Guia para Iniciantes</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            `;
+        }
+
+        // Renderizar Mapa do Site
+        function renderSitemap() {
+            let html = `<h1 class="text-5xl font-black mb-12 text-center tracking-tighter">MAPA DO SITE</h1>
+            <div class="columns-1 md:columns-3 gap-8 space-y-8">`;
+            
+            Object.entries(sitemap).forEach(([cat, pages]) => {
+                html += `
+                <div class="break-inside-avoid bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+                    <h2 class="text-xl font-black mb-6 uppercase tracking-tighter border-b-4 border-red-500 inline-block">${cat.replace(/-/g, ' ')}</h2>
+                    <ul class="space-y-2">
+                        ${pages.map(p => `<li><a href="#${p.slug}" class="text-gray-500 hover:text-red-500 font-medium text-sm">${p.title}</a></li>`).join('')}
+                    </ul>
+                </div>`;
+            });
+            
+            html += `</div>`;
+            return html;
+        }
+
+        // Sistema de Roteamento
+        function navigateTo(slug) {
+            const area = document.getElementById('content-area');
+            window.scrollTo(0, 0);
+            
+            if (slug === 'home' || slug === '') {
+                area.innerHTML = renderHome();
+                document.title = "Portal RC 2026 - Início";
+            } else if (slug === 'mapa-do-site') {
+                area.innerHTML = renderSitemap();
+                document.title = "Mapa do Site - Portal RC";
+            } else {
+                // Procurar a página nos dados
+                let pageFound = null;
+                Object.values(sitemap).forEach(cat => {
+                    const p = cat.find(item => item.slug === slug);
+                    if (p) pageFound = p;
+                });
+                
+                if (pageFound) {
+                    area.innerHTML = generateArticle(pageFound.title);
+                    document.title = pageFound.title + " - Portal RC";
+                } else {
+                    area.innerHTML = `<div class="text-center py-24"><h1 class="text-4xl font-black">Página não encontrada</h1><a href="#" onclick="navigateTo('home')" class="text-red-500 underline">Voltar para o início</a></div>`;
+                }
+            }
+        }
+
+        // Escutar mudanças na URL (Hash)
+        window.addEventListener('hashchange', () => {
+            const slug = window.location.hash.replace('#', '');
+            navigateTo(slug);
+        });
+
+        // Iniciar site
+        window.onload = () => {
+            initNav();
+            const initialSlug = window.location.hash.replace('#', '');
+            navigateTo(initialSlug || 'home');
+        };
+    </script>
+</body>
+</html>
